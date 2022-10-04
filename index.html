@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <main>
+      <h2 id="maintitle" class="mainTitle">Weather App</h2>
+      <div id="inputWrapper">
+        <form onsubmit="getWeather(); return false;">
+          <input
+            type="text"
+            name="location"
+            id="locationName"
+            placeholder="Enter Name Here"
+            required
+          />
+          <button type="submit">Get Weather</button>
+        </form>
+      </div>
+      <div id="dataWrapper"></div>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const getWeather = () => {
+        let userInput = document.querySelector("#locationName").value;
+        let URL = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
+        let API_KEY = 'f23d04b0d7e396743337140230ef73a3';
+        axios
+          .get(`${URL}&appid=${API_KEY}&q=${userInput}`)
+          .then((res) => {
+            console.log(res.data);
+            document.querySelector("#dataWrapper").innerHTML = `
+                <p class='locationName'>Location: ${res.data.name}</p>
+                <p class='weather'>Weather: ${res.data.main.temp}</p>
+            `;
+            let userInput = (document.querySelector("#locationName").value =
+              "");
+          })
+          .catch((error) => console.log(error));
+      };
+    </script>
+  </body>
+</html>
