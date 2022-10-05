@@ -19,7 +19,9 @@
     <main>
       <div id="boxWrapper">
         <div id="dataWrapper">
-          <h3 class="dataWrapper__title">Weather App</h3>
+          <div id="mainData">
+            <!-- <p class="dataWrapper__title">Country</p> -->
+          </div>
         </div>
         <div id="inputWrapper">
           <form onsubmit="getWeather(); return false;">
@@ -55,14 +57,20 @@
           .then((res) => {
             console.log(res.data);
             document.querySelector("#dataWrapper").innerHTML = `
-                <p class='locationName'>Location: ${res.data.name}</p>
-                <p class='weather'>Weather: ${res.data.main.temp}</p>
+                <p class='locationName'>Country: ${res.data.sys.country}</p>
+                <p class='weather'>${res.data.main.temp} ${res.data.name}
+                  
+                </p>
             `;
             document.querySelector("#weatherDetails__data").innerHTML = `
                 <p>Minimum Temperature <span class='values'>${res.data.main.temp_min}</span></p>
                 <p>Maximum Temperature <span class='values'>${res.data.main.temp_max}</span></p>
                 <p>Feels Like <span class='values'>${res.data.main.feels_like}</span></p>
                 <p>humidity <span class='values'>${res.data.main.humidity}</span></p>
+                <div id='weatherDetails__icon-section'>
+                  <p class='description'>${res.data.weather[0].description}</p>
+                  <img src='https://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png' class='weather_icon' />
+                </div>
             `;
             let userInput = (document.querySelector("#locationName").value =
               "");

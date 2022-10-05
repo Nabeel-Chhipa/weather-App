@@ -27,10 +27,6 @@ main {
   margin: 30px 0px;
 }
 
-.dataWrapper__title {
-  letter-spacing: 2px;
-}
-
 div#boxWrapper {
   background-image: url("./images/tom-barrett-hgGplX3PFBg-unsplash.jpg");
   background-size: cover;
@@ -56,6 +52,10 @@ div#dataWrapper {
   /* background-color: var(--orange); */
   margin: 0;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 form {
@@ -123,7 +123,7 @@ i.fa-solid.fa-magnifying-glass {
   bottom: 0;
 }
 
-#weatherDetails h4{
+#weatherDetails h4 {
   padding-bottom: 7px;
   font-size: 1.2rem;
   font-weight: 100;
@@ -142,4 +142,27 @@ i.fa-solid.fa-magnifying-glass {
 
 #weatherDetails__data span.values {
   float: right;
+}
+
+p.weather {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  line-height: 3rem;
+  margin-bottom: 30px;
+}
+
+span.description {
+  font-size: 1rem;
+  line-height: 1rem;
+  /* margin-left: 30px; */
+}
+
+img.weather_icon {
+  width: 50px;
+  height: auto;
+  /* position: relative; */
+  /* top: 40%;
+  left: 34%; */
+  filter: brightness(10);
 }
