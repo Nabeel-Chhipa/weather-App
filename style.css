@@ -28,7 +28,7 @@ main {
 }
 
 .dataWrapper__title {
-    letter-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 div#boxWrapper {
@@ -59,36 +59,87 @@ div#dataWrapper {
 }
 
 form {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 input#locationName {
-    width: 100%;
-    padding: 6px;
-    background: transparent;
-    border-bottom: 1px solid var(--white) !important;
-    border: none;
-    color: var(--white);
+  width: 100%;
+  padding: 10px 5px;
+  background: transparent;
+  border-bottom: 1px solid var(--white) !important;
+  border: none;
+  color: var(--white);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
 }
 
 input#locationName:focus-visible {
-    outline: none;
+  outline: none;
 }
 
-input#locationName::placeholder {
-    font-size: 1rem;
-}
+/* input#locationName::placeholder {
+} */
 
 button {
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    border: 0;
-    width: 50%;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  border: 0;
+  width: 50%;
+  padding: 10px 5px;
+  background-color: var(--darkNavy);
+  color: var(--white);
+  border-radius: 5px;
+  border-bottom: 1px solid var(--darkNavy);
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: transparent;
+  border-radius: 0;
+  transition-duration: 0.5s;
+}
+
+i.fa-solid.fa-magnifying-glass {
+  position: absolute;
+  right: 0;
+  left: 5;
+  top: 10px;
+}
+
+#weatherDetails {
+  position: relative;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#weatherDetails h4{
+  padding-bottom: 7px;
+  font-size: 1.2rem;
+  font-weight: 100;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--white);
+  margin-bottom: 20px;
+}
+
+#weatherDetails__data p {
+  font-size: 0.9rem;
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+#weatherDetails__data span.values {
+  float: right;
 }

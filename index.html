@@ -9,7 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/1e5c4d3074.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1e5c4d3074.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -27,9 +30,15 @@
               placeholder="Enter Location"
               required
             />
-            <button type="submit">Get Weather</button>
+            <!-- <button type="submit">Get Weather</button> -->
             <i class="fa-solid fa-magnifying-glass"></i>
           </form>
+
+          <div id="weatherDetails">
+            <h4>Weather details</h4>
+
+            <div id="weatherDetails__data"></div>
+          </div>
         </div>
       </div>
     </main>
@@ -48,6 +57,12 @@
             document.querySelector("#dataWrapper").innerHTML = `
                 <p class='locationName'>Location: ${res.data.name}</p>
                 <p class='weather'>Weather: ${res.data.main.temp}</p>
+            `;
+            document.querySelector("#weatherDetails__data").innerHTML = `
+                <p>Minimum Temperature <span class='values'>${res.data.main.temp_min}</span></p>
+                <p>Maximum Temperature <span class='values'>${res.data.main.temp_max}</span></p>
+                <p>Feels Like <span class='values'>${res.data.main.feels_like}</span></p>
+                <p>humidity <span class='values'>${res.data.main.humidity}</span></p>
             `;
             let userInput = (document.querySelector("#locationName").value =
               "");
