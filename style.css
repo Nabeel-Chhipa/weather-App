@@ -82,8 +82,9 @@ input#locationName:focus-visible {
   outline: none;
 }
 
-/* input#locationName::placeholder {
-} */
+input#locationName::placeholder {
+  color: #fff;
+}
 
 button {
   position: relative;

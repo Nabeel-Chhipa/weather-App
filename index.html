@@ -55,8 +55,58 @@
         axios
           .get(`${URL}&appid=${API_KEY}&q=${userInput}`)
           .then((res) => {
-            console.log(res.data);
-            document.querySelector("#dataWrapper").innerHTML = `
+            // console.log(res.data);
+            // {
+            //   res.data.weather[0].description === "smoke" ?
+            //   document.querySelector("#boxWrapper").style.backgroundImage = "url('./images/nathan-anderson-BisaxHbl8GU-unsplash.jpg')"
+            //   :
+            //   ''
+            // }
+            if (res.data.weather[0].description === "smoke") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/alexander-voronov-fSGnRGfnTbY-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "clear sky") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/jessy-smith-gRNmj3nnadY-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "overcast clouds") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/annie-spratt-f10KG0S3BLM-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "few clouds") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/chris-9vp4aeh4bR4-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "scattered clouds") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/jason-wong-NCb50hjk-pQ-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "broken clouds") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/martin-sanchez-XPrTcGdv5n8-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "shower rain") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/pan-xiaozhen-OKlo0r3gBcQ-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "rain") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/anjana-menon-v3UZKbMaTGk-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "thunderstorm") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/johannes-plenio-GmBT6GQEOs0-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "snow") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/josh-hild-_TuI8tZHlk4-unsplash.jpg')";
+            }
+            if (res.data.weather[0].description === "snow") {
+              document.querySelector("#boxWrapper").style.backgroundImage =
+                "url('./images/goran-vucicevic-EuuIa8XTLK4-unsplash.jpg')";
+            }
+            document.querySelector("#dataWrapper").innerHTML = `            
                 <p class='locationName'>Country: ${res.data.sys.country}</p>
                 <p class='weather'>${res.data.main.temp} ${res.data.name}
                   
